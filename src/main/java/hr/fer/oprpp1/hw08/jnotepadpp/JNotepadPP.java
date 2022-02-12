@@ -32,10 +32,6 @@ import javax.swing.WindowConstants;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 
-import zi.zad1.ExamZad01_1;
-import zi.zad1.ExamZad01_2;
-import zi.zad3.Dijalog;
-
 /**
  * Grafička aplikacija za pisanje teksta. Slična popularnom programu Notepad++.
  * 
@@ -199,58 +195,8 @@ public class JNotepadPP extends JFrame {
 		changeCaseMenu.add(new JMenuItem(toggleCaseAction));
 		menuBar.add(changeCaseMenu);
 
-		JMenu ispitMenu = new JMenu("Ispit");
-		ispitMenu.add(new JMenuItem(zadatak1Action));
-		ispitMenu.add(new JMenuItem(zadatak1_2Action));
-		ispitMenu.add(new JMenuItem(zadatak3Action));
-		menuBar.add(ispitMenu);
-
 		this.setJMenuBar(menuBar);
 	}
-
-	private Action zadatak1Action = new AbstractAction() {
-
-		@Override
-		public void actionPerformed(ActionEvent arg0) {
-			SwingUtilities.invokeLater(new Runnable() {
-
-				@Override
-				public void run() {
-					new ExamZad01_1().setVisible(true);
-				}
-			});
-		}
-	};
-
-	private Action zadatak1_2Action = new AbstractAction() {
-
-		@Override
-		public void actionPerformed(ActionEvent arg0) {
-			SwingUtilities.invokeLater(new Runnable() {
-
-				@Override
-				public void run() {
-					new ExamZad01_2().setVisible(true);
-				}
-			});
-		}
-	};
-	
-	private Action zadatak3Action = new AbstractAction() {
-
-		@Override
-		public void actionPerformed(ActionEvent arg0) {
-			SwingUtilities.invokeLater(new Runnable() {
-
-				@Override
-				public void run() {
-					Dijalog d = new Dijalog(model);
-					d.setModal(false);
-					d.setVisible(true);
-				}
-			});
-		}
-	};
 
 	/**
 	 * Metoda stvara alatnu traku u prozoru.
@@ -326,21 +272,6 @@ public class JNotepadPP extends JFrame {
 		exitAction.putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke("control X"));
 		exitAction.putValue(Action.MNEMONIC_KEY, KeyEvent.VK_X);
 		exitAction.putValue(Action.SHORT_DESCRIPTION, "Exit application.");
-
-		zadatak1Action.putValue(Action.NAME, "Zadatak 1.1.");
-		zadatak1Action.putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke("control I"));
-		zadatak1Action.putValue(Action.MNEMONIC_KEY, KeyEvent.VK_I);
-		zadatak1Action.putValue(Action.SHORT_DESCRIPTION, "Open dialog set on exam");
-
-		zadatak1_2Action.putValue(Action.NAME, "Zadatak 1.2.");
-		zadatak1_2Action.putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke("control P"));
-		zadatak1_2Action.putValue(Action.MNEMONIC_KEY, KeyEvent.VK_P);
-		zadatak1_2Action.putValue(Action.SHORT_DESCRIPTION, "Open dialog set on exam");
-		
-		zadatak3Action.putValue(Action.NAME, "Zadatak 3");
-		zadatak3Action.putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke("control L"));
-		zadatak3Action.putValue(Action.MNEMONIC_KEY, KeyEvent.VK_L);
-		zadatak3Action.putValue(Action.SHORT_DESCRIPTION, "Open dialog set on exam");
 
 	}
 
